@@ -8,8 +8,8 @@ $mensagem = addcslashes($_POST['message'])
 
 $to = "contato@wmwork.com.br"
 $subjet = "contato - Site WM Work Service"
-$body = "Nome: ".$nome.  "\r\n"
-        "Email: ".$email. "\r\n"
+$body = "Nome: ".$nome.  "\r\n".
+        "Email: ".$email. "\r\n".
         "Mensagem: ".$mensagem;
 
 $header ="From: postmaster@wmwork.com.br"."\r\n"
@@ -21,7 +21,7 @@ if(mail($to,$subjet,$body,$header)){
 
     echo("Email Enviado com Sucesso!")
 }else{
-    echo("O Email não pode ser Enviado")";"
+    echo("O Email não pode ser Enviado");
 }
 
 

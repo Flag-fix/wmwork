@@ -4,21 +4,21 @@ $errorMSG = "";
 
 // NAME
 if (empty($_POST["name"])) {
-    $errorMSG = "Name is required ";
+    $errorMSG = "Por Favor Informe um Nome ";
 } else {
     $name = $_POST["name"];
 }
 
 // EMAIL
 if (empty($_POST["email"])) {
-    $errorMSG .= "Email is required ";
+    $errorMSG .= "Por Favor Informe um E-mail";
 } else {
     $email = $_POST["email"];
 }
 
 // MSG SUBJECT
 if (empty($_POST["msg_subject"])) {
-    $errorMSG .= "Subject is required ";
+    $errorMSG .= "Por Favor Informe um Assunto ";
 } else {
     $msg_subject = $_POST["msg_subject"];
 }
@@ -26,27 +26,27 @@ if (empty($_POST["msg_subject"])) {
 
 // MESSAGE
 if (empty($_POST["message"])) {
-    $errorMSG .= "Message is required ";
+    $errorMSG .= "Escreva alguma mensagem ";
 } else {
     $message = $_POST["message"];
 }
 
 
-$EmailTo = "armanmia7@gmail.com";
-$Subject = "New Message Received";
+$EmailTo = "contato@wmwork.com.br";
+$Subject = "Nova Mensagem do Site";
 
 // prepare email body text
 $Body = "";
-$Body .= "Name: ";
+$Body .= "Nome: ";
 $Body .= $name;
 $Body .= "\n";
-$Body .= "Email: ";
+$Body .= "E-mail: ";
 $Body .= $email;
 $Body .= "\n";
-$Body .= "Subject: ";
+$Body .= "Assunto: ";
 $Body .= $msg_subject;
 $Body .= "\n";
-$Body .= "Message: ";
+$Body .= "Mensagem: ";
 $Body .= $message;
 $Body .= "\n";
 
@@ -55,10 +55,10 @@ $success = mail($EmailTo, $Subject, $Body, "From:".$email);
 
 // redirect to success page
 if ($success && $errorMSG == ""){
-   echo "success";
+   echo "Sucesso";
 }else{
     if($errorMSG == ""){
-        echo "Something went wrong :(";
+        echo "Algo deu Errado :(";
     } else {
         echo $errorMSG;
     }
